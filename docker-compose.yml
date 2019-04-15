@@ -5,6 +5,7 @@ services:
     build: ./build/
     volumes:
       - ./www:/www/gvsu
+      - ./conf:/www/conf
     ports:
       - "81:80"
       - "5000:5000"
