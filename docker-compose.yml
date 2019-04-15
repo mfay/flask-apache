@@ -1,0 +1,19 @@
+version: '3.3'
+services:
+  coldfusion:
+    image: cent-flask:latest
+    build: ./build/
+    volumes:
+      - ./www:/www/gvsu
+    ports:
+      - "81:80"
+      - "5000:5000"
+  oracle:
+    image: myoracle
+    ports:
+      - "49161:1521"
+    volumes:
+      - oracle:/u01/app/oracle
+volumes:
+  oracle:
+    external: true
